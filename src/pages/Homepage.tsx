@@ -7,6 +7,7 @@ import hero2 from '../assets/Jimam General/2.jpg';
 import brick1 from '../assets/Bricks 1/1.jpg';
 import brick2 from '../assets/Bricks 1/2.jpg';
 import brick3 from '../assets/Bricks 1/3.jpg';
+import ctaBg from '../assets/Jimam Final/4.jpg';
 
 const Homepage = () => {
   const features = [
@@ -216,7 +217,7 @@ const Homepage = () => {
       <section
         className="py-12 sm:py-16 lg:py-24 relative text-brand-white"
         style={{
-          backgroundImage: `url('../src/assets/Jimam Final/4.jpg')`,
+          backgroundImage: `url(${ctaBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
