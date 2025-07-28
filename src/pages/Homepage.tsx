@@ -110,20 +110,20 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        {/* Slider navigation dots */}
-        <div className="flex justify-center mt-10 space-x-3 z-40 relative">
-          {heroImages.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentHero(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={`w-3 h-3 rounded-full border-2 border-brand-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-blue
-                ${currentHero === idx ? 'bg-brand-blue scale-125 shadow-lg border-brand-blue' : 'bg-brand-white/60 hover:bg-brand-blue/60'}`}
-              style={{ outline: 'none' }}
-            />
-          ))}
-        </div>
       </section>
+      {/* Slider navigation dots */}
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-8 flex justify-center space-x-3 z-40">
+        {heroImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentHero(idx)}
+            aria-label={`Go to slide ${idx + 1}`}
+            className={`w-3 h-3 rounded-full border-2 border-brand-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-blue
+              ${currentHero === idx ? 'bg-brand-blue scale-125 shadow-lg border-brand-blue' : 'bg-brand-white/60 hover:bg-brand-blue/60'}`}
+            style={{ outline: 'none' }}
+          />
+        ))}
+      </div>
 
       {/* Featured Products */}
       <section className="py-12 sm:py-16 lg:py-24 bg-brand-white">
@@ -216,7 +216,7 @@ const Homepage = () => {
       <section
         className="py-12 sm:py-16 lg:py-24 relative text-brand-white"
         style={{
-          backgroundImage: `url('/src/assets/Jimam Final/4.jpg')`,
+          backgroundImage: `url('../src/assets/Jimam Final/4.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
