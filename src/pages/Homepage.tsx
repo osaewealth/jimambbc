@@ -100,7 +100,7 @@ const Homepage = () => {
               Premium clay bricks and building materials for contractors, builders, and homeowners. 
               Quality you can trust, craftsmanship that lasts.
             </p>
-            <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
               <Button to="/portfolio" variant="primary" size="lg">
                 View Products
               </Button>
@@ -112,7 +112,7 @@ const Homepage = () => {
         </div>
       </section>
       {/* Slider navigation dots */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-8 flex justify-center space-x-3 z-40">
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-4 flex justify-center space-x-3 z-40">
         {heroImages.map((_, idx) => (
           <button
             key={idx}
@@ -189,7 +189,7 @@ const Homepage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-r from-brand-blue to-brand-black text-brand-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-r from-[#3d2502] to-[#3d2502] text-brand-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div className="p-4 sm:p-6">

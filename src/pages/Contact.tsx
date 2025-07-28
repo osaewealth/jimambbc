@@ -23,7 +23,26 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent('New Quote Request from Jimam Bricks Website');
+    const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Project Type: ${formData.projectType}
+
+Message:
+${formData.message}
+
+---
+This message was sent from the Jimam Bricks website contact form.
+    `);
+    
+    // Open email client with CEO email
+    window.location.href = `mailto:ceo@jimambricks.com?subject=${subject}&body=${body}`;
+    
+    // Also log for debugging
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
@@ -275,25 +294,19 @@ const Contact = () => {
             </p>
           </div>
 
-          {/* Embedded Map Placeholder */}
+          {/* Embedded Map */} 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-600 font-medium">Interactive Map</p>
-                <p className="text-gray-500 text-sm">
-                  Ghana (Contact for directions)
-                </p>
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-4 bg-[#650909] text-white px-6 py-2 rounded-lg hover:bg-[#4b1313] transition-colors"
-                >
-                  View on Google Maps
-                </a>
-              </div>
-            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.191737626375!2d-0.9258985756158197!3d5.232551386818713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfde175098a2d4cd%3A0x9eace33f80780c3a!2sJimam%20Company%20LTD!5e0!3m2!1sen!2sgh!4v1753706074625!5m2!1sen!2sgh" 
+              width="100%" 
+              height="450" 
+              style={{border:0}} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Jimam Company LTD Location"
+              className="w-full"
+            ></iframe>
           </div>
 
           {/* Facility Info */}
