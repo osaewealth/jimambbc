@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Filter, ExternalLink } from 'lucide-react';
+import Button from '../components/Button';
 import img1 from '../assets/Jimam General/new1.jpg';
 import img2 from '../assets/Jimam General/new2.jpg';
 import img3 from '../assets/Jimam General/new3.jpg';
@@ -158,18 +159,12 @@ const Portfolio = () => {
             construction project. Get in touch for a personalized consultation and quote.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a
-              href="/contact"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center"
-            >
+            <Button to="/contact" variant="primary" size="lg">
               Get Free Consultation
-            </a>
-            <a
-              href="tel:+1234567890"
-              className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 inline-flex items-center justify-center"
-            >
+            </Button>
+            <Button href="tel:+233505277493" variant="outline" size="lg">
               Call: +233 50 527 7493
-            </a>
+            </Button>
           </div>
         </div>
       </section>

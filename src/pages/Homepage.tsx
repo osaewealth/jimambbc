@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, DollarSign, Truck, Award, CheckCircle } from 'lucide-react';
+import Button from '../components/Button';
 import hero1 from '../assets/Jimam General/6.jpg';
 import hero2 from '../assets/Jimam General/2.jpg';
 import brick1 from '../assets/Bricks 1/1.jpg';
@@ -100,18 +101,12 @@ const Homepage = () => {
               Quality you can trust, craftsmanship that lasts.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-              <Link
-                to="/portfolio"
-                className="bg-brand-blue hover:bg-blue-800 text-brand-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 text-center text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
+              <Button to="/portfolio" variant="primary" size="lg">
                 View Products
-              </Link>
-              <Link
-                to="/contact"
-                className="bg-brand-white border-2 border-brand-blue hover:bg-brand-blue hover:text-brand-white text-brand-blue px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 text-center text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
+              </Button>
+              <Button to="/contact" variant="outline" size="lg">
                 Get a Quote
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -156,7 +151,7 @@ const Homepage = () => {
                   <p className="text-sm sm:text-base text-brand-black mb-4 leading-relaxed">{product.description}</p>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center text-brand-blue hover:text-blue-800 font-medium text-sm sm:text-base transition-colors duration-200"
+                    className="inline-flex items-center text-[#650909] hover:text-[#4b1313] font-medium text-sm sm:text-base transition-colors duration-200"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
@@ -236,20 +231,13 @@ const Homepage = () => {
             and quote on your next construction project.
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center relative z-10">
-            <Link
-              to="/contact"
-              className="bg-brand-blue hover:bg-blue-800 text-brand-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center justify-center text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
+            <Button to="/contact" variant="primary" size="lg" icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}>
               Get Free Quote
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-            </Link>
-            <a
-              href="tel:+233505277493"
-              className="bg-brand-white border-2 border-brand-blue hover:bg-brand-blue hover:text-brand-white text-brand-blue px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center justify-center text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
+            </Button>
+            <Button href="tel:+233505277493" variant="outline" size="lg">
               <span className="hidden sm:inline">Call Now: +233 50 527 7493</span>
               <span className="sm:hidden">Call Now</span>
-            </a>
+            </Button>
           </div>
         </div>
       </section>

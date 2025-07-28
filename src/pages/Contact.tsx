@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import Button from '../components/Button';
 import yuyuImg from '../assets/Jimam General/yuyu.webp';
 
 const Contact = () => {
@@ -184,13 +185,14 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <button
+                <Button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
+                  variant="primary"
+                  className="w-full"
+                  icon={<Send className="w-5 h-5" />}
                 >
-                  <Send className="w-5 h-5 mr-2" />
                   Send Quote Request
-                </button>
+                </Button>
               </form>
             </div>
 
@@ -210,8 +212,8 @@ const Contact = () => {
                 {contactInfo.map((info, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-6">
                     <div className="flex items-start">
-                      <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                        <info.icon className="w-6 h-6 text-blue-600" />
+                      <div className="bg-[#650909]/10 p-3 rounded-lg mr-4">
+                        <info.icon className="w-6 h-6 text-[#650909]" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
@@ -219,16 +221,16 @@ const Contact = () => {
                           {info.details.map((detail, idx) => (
                             info.title === 'Phone/WhatsApp' ? (
                               <p key={idx} className="text-gray-600">
-                                <a href="tel:+233505277493" className="text-blue-600 hover:underline">{detail}</a> |{' '}
+                                <a href="tel:+233505277493" className="text-[#650909] hover:underline">{detail}</a> |{' '}
                                 <a href="https://wa.me/233505277493" className="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">WhatsApp Chat</a>
                               </p>
                             ) : info.title === 'E-mail' ? (
                               <p key={idx} className="text-gray-600">
-                                <a href={`mailto:${detail}`} className="text-blue-600 hover:underline">{detail}</a>
+                                <a href={`mailto:${detail}`} className="text-[#650909] hover:underline">{detail}</a>
                               </p>
                             ) : info.title === 'Website' ? (
                               <p key={idx} className="text-gray-600">
-                                <a href="https://www.jimambricks.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">{detail}</a>
+                                <a href="https://www.jimambricks.com" className="text-[#650909] hover:underline" target="_blank" rel="noopener noreferrer">{detail}</a>
                               </p>
                             ) : (
                               <p key={idx} className="text-gray-600">{detail}</p>
@@ -286,7 +288,7 @@ const Contact = () => {
                   href="https://maps.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="inline-block mt-4 bg-[#650909] text-white px-6 py-2 rounded-lg hover:bg-[#4b1313] transition-colors"
                 >
                   View on Google Maps
                 </a>
@@ -297,8 +299,8 @@ const Contact = () => {
           {/* Facility Info */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-blue-600" />
+              <div className="bg-[#650909]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-[#650909]" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Easy Access</h3>
               <p className="text-gray-600 text-sm">
@@ -306,8 +308,8 @@ const Contact = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-blue-600" />
+              <div className="bg-[#650909]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-[#650909]" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Extended Hours</h3>
               <p className="text-gray-600 text-sm">
@@ -315,8 +317,8 @@ const Contact = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-blue-600" />
+              <div className="bg-[#650909]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-8 h-8 text-[#650909]" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Expert Consultation</h3>
               <p className="text-gray-600 text-sm">

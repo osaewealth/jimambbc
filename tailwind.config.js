@@ -3,10 +3,13 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+      },
       colors: {
         brand: {
-          blue: '#0A3A75', // Jimam Bricks Blue
-          black: '#181818', // Jimam Bricks Black
+          blue: '#650909', // Jimam Bricks Red
+          black: '#4b1313', // Jimam Bricks Dark Red
           white: '#FFFFFF', // White for accents
         },
       },

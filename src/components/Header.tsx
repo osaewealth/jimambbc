@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import Button from './Button';
 import logo from '../assets/logo.JPG';
 
 const Header = () => {
@@ -69,12 +70,9 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span className="text-sm font-medium">Call Now</span>
             </a>
-            <Link
-              to="/contact"
-              className="bg-brand-blue text-brand-white px-6 py-2 rounded-lg font-medium hover:bg-blue-800 transition-colors duration-200"
-            >
+            <Button to="/contact" variant="primary" size="sm">
               Get a Quote
-            </Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,13 +109,15 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 <span className="text-base font-medium">Call Now</span>
               </a>
-              <Link
+              <Button
                 to="/contact"
+                variant="primary"
+                size="sm"
                 onClick={() => setIsMenuOpen(false)}
-                className="block bg-brand-blue text-brand-white px-6 py-2 rounded-lg font-medium text-center hover:bg-blue-800 transition-colors duration-200"
+                className="w-full"
               >
                 Get a Quote
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

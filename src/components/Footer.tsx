@@ -18,11 +18,11 @@ const Footer = () => {
                 style={{ background: 'white' }}
               />
               <div className="flex flex-col">
-                <span className="font-bold text-lg text-brand-blue">Jimam</span>
-                <span className="text-sm text-brand-blue">Bricks and Tiles</span>
+                <span className="font-bold text-lg text-white">Jimam</span>
+                <span className="text-sm text-white">Bricks and Tiles</span>
               </div>
             </div>
-            <p className="text-brand-white text-sm leading-relaxed">
+            <p className="text-gray-200 text-sm leading-relaxed">
               Quality clay bricks and building materials for all your construction needs. 
               Building strong foundations with decades of experience.
             </p>
@@ -33,22 +33,22 @@ const Footer = () => {
             <h3 className="font-semibold text-lg">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Link to="/" className="text-gray-200 hover:text-white transition-colors text-sm">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Link to="/about" className="text-gray-200 hover:text-white transition-colors text-sm">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Link to="/portfolio" className="text-gray-200 hover:text-white transition-colors text-sm">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Link to="/contact" className="text-gray-200 hover:text-white transition-colors text-sm">
                   Contact
                 </Link>
               </li>
@@ -60,33 +60,32 @@ const Footer = () => {
             <h3 className="font-semibold text-lg">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 mt-1 text-blue-400" />
-                <span className="text-gray-300 text-sm">
-                  Ghana,Ekumfi Atwa
-
+                <MapPin className="w-4 h-4 mt-1 text-white" />
+                <span className="text-gray-200 text-sm">
+                  Ghana, Ekumfi Atwa
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-blue-400" />
-                <a href="tel:+233505277493" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Phone className="w-4 h-4 text-white" />
+                <a href="tel:+233505277493" className="text-gray-200 hover:text-white transition-colors text-sm">
                   +233 50 527 7493
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-blue-400" />
-                <a href="mailto:ceo@jimambricks.com" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Mail className="w-4 h-4 text-white" />
+                <a href="mailto:ceo@jimambricks.com" className="text-gray-200 hover:text-white transition-colors text-sm">
                   ceo@jimambricks.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-blue-400" />
-                <a href="mailto:info@jimambricks.com" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Mail className="w-4 h-4 text-white" />
+                <a href="mailto:info@jimambricks.com" className="text-gray-200 hover:text-white transition-colors text-sm">
                   info@jimambricks.com
                 </a>
               </div>
               
               <div className="flex items-center space-x-3">
-                <a href="https://wa.me/233505277493" className="text-green-400 hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/233505277493" className="text-gray-200 hover:text-white transition-colors text-sm" target="_blank" rel="noopener noreferrer">
                   WhatsApp: +233 50 527 7493
                 </a>
               </div>
@@ -99,7 +98,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="https://facebook.com/jimanconstruction"
-                className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition-colors"
+                className="bg-gray-800 p-2 rounded-lg hover:bg-[#650909] transition-colors"
                 aria-label="Facebook"
                 target="_blank" rel="noopener noreferrer"
               >
@@ -107,7 +106,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://instagram.com/jimanconstruction"
-                className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition-colors"
+                className="bg-gray-800 p-2 rounded-lg hover:bg-[#650909] transition-colors"
                 aria-label="Instagram"
                 target="_blank" rel="noopener noreferrer"
               >
@@ -123,15 +122,15 @@ const Footer = () => {
               </a>
             </div>
             <div className="space-y-2">
-              <h4 className="font-medium">Newsletter</h4>
-              <p className="text-gray-400 text-sm">Get updates on new products and projects</p>
+              <h4 className="font-medium text-white">Newsletter</h4>
+              <p className="text-gray-200 text-sm">Get updates on new products and projects</p>
               <div className="flex space-x-2">
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm focus:outline-none focus:border-blue-500"
+                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm focus:outline-none focus:border-[#650909] text-white placeholder-gray-400"
                 />
-                <button className="bg-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+                <button className="bg-[#650909] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#4b1313] transition-colors text-white">
                   Subscribe
                 </button>
               </div>
@@ -139,16 +138,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-brand-blue mt-12 pt-8">
+        <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-brand-white text-sm">
+            <p className="text-gray-200 text-sm">
               © 2024 Jimam Bricks. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-brand-blue hover:text-brand-white transition-colors">
+              <a href="#" className="text-white hover:text-gray-200 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-brand-blue hover:text-brand-white transition-colors">
+              <a href="#" className="text-white hover:text-gray-200 transition-colors">
                 Terms of Service
               </a>
             </div>
