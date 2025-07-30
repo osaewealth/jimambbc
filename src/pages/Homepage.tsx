@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, DollarSign, Truck, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, Shield, DollarSign, Truck, Award, } from 'lucide-react';
 import Button from '../components/Button';
-import hero1 from '../assets/Jimam General/6.jpg';
-import hero2 from '../assets/Jimam General/2.jpg';
+import hero1 from '../assets/jimam video/Jimam Stock Videos 1.mp4';
+import hero2 from '../assets/jimam video/Jimam Stock Videos 3.mp4';
 import brick1 from '../assets/Bricks 1/1.jpg';
 import brick2 from '../assets/Bricks 1/2.jpg';
 import brick3 from '../assets/Bricks 1/3.jpg';
@@ -55,11 +55,11 @@ const Homepage = () => {
   ];
 
   // Hero slider logic
-  const heroImages = [hero1, hero2];
+  const heroVideos = [hero1, hero2];
   const [currentHero, setCurrentHero] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHero((prev) => (prev + 1) % heroImages.length);
+      setCurrentHero((prev) => (prev + 1) % heroVideos.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -68,23 +68,24 @@ const Homepage = () => {
     <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
       <section className="relative text-brand-white overflow-hidden min-h-screen flex items-center">
-        {/* Slider images */}
-        {heroImages.map((img, idx) => (
-          <div
-            key={img}
-            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ${
-              idx === currentHero ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 -translate-y-8 z-0'
-            }`}
-            style={{
-              backgroundImage: `url(${img})`,
-            }}
+        {heroVideos.map((video, idx) => (
+          <video
+            key={video}
+            className={`absolute inset-0 w-full h-full object-cover overflow-hidden transition-all duration-1000 ${idx === currentHero ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
             aria-hidden={idx !== currentHero}
           />
         ))}
+
         <div className="absolute inset-0 bg-black/50 z-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 z-30">
           <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight text-brand-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-normal text-brand-white">
               {currentHero === 0 ? (
                 <>
                   Strong Foundations.<br />
@@ -92,13 +93,14 @@ const Homepage = () => {
                 </>
               ) : (
                 <>
-                  Building Ghana’s Future.<br />
+                  <h1 className=''>Building Ghana’s Future.<br />
                   <span className="text-brand-white">Quality You Can Trust.</span>
+                  </h1>
                 </>
               )}
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-brand-white leading-relaxed">
-              Premium clay bricks and building materials for contractors, builders, and homeowners. 
+              Premium clay bricks and building materials for contractors, builders, and homeowners.
               Quality you can trust, craftsmanship that lasts.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
@@ -114,13 +116,13 @@ const Homepage = () => {
       </section>
       {/* Slider navigation dots */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-4 flex justify-center space-x-3 z-40">
-        {heroImages.map((_, idx) => (
+        {heroVideos.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentHero(idx)}
             aria-label={`Go to slide ${idx + 1}`}
             className={`w-3 h-3 rounded-full border-2 border-brand-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-blue
-              ${currentHero === idx ? 'bg-brand-blue scale-125 shadow-lg border-brand-blue' : 'bg-brand-white/60 hover:bg-brand-blue/60'}`}
+              ${currentHero === idx ? 'bg-brand-blue scale-125 shadow-lg' : 'bg-brand-white/60 hover:bg-brand-blue/60'}`}
             style={{ outline: 'none' }}
           />
         ))}
@@ -228,7 +230,7 @@ const Homepage = () => {
             Start Your Project Today
           </h2>
           <p className="text-lg sm:text-xl text-brand-white mb-6 sm:mb-8 max-w-3xl mx-auto px-4 leading-relaxed relative z-10">
-            Ready to build something amazing? Get in touch with our team for a free consultation 
+            Ready to build something amazing? Get in touch with our team for a free consultation
             and quote on your next construction project.
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center relative z-10">
