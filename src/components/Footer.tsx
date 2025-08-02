@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Facebook, Instagram, MessageCircle } from 'lucide-react';
-import logo from '../assets/jimam-logo.jpg';
+import logo from '../assets/jimam-logo.png';
 
 const Footer = () => {
   return (
@@ -14,8 +14,8 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Jimam Bricks Logo"
-                className="w-14 h-14 rounded-lg object-contain shadow-lg bg-white p-1"
-                style={{ background: 'white' }}
+                className="w-14 h-14 rounded-lg object-contain shadow-lg  p-1"
+                // style={{ background: 'white' }}
               />
               <div className="flex flex-col">
                 <span className="font-bold text-lg text-white">Jimam</span>

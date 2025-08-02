@@ -103,10 +103,10 @@ This message was sent from the Jimam Bricks website contact form.
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-[#650909] mb-6">
                 Get a Free Quote
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-black mb-8">
                 Fill out the form below and we'll get back to you within 24 hours with 
                 a detailed quote for your project.
               </p>
@@ -218,10 +218,10 @@ This message was sent from the Jimam Bricks website contact form.
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold text-[#650909] mb-6">
                   Contact Information
                 </h2>
-                <p className="text-gray-600 mb-8">
+                <p className="text-black mb-8">
                   Reach out to us through any of the following channels. Our team is ready 
                   to assist you with all your building material needs.
                 </p>
@@ -285,10 +285,10 @@ This message was sent from the Jimam Bricks website contact form.
       <section className="py-16 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-[#650909] mb-4">
               Visit Our Facility
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-black max-w-3xl mx-auto">
               Come see our manufacturing facility and material warehouse. We welcome 
               contractors and builders to visit and inspect our products firsthand.
             </p>
@@ -315,8 +315,8 @@ This message was sent from the Jimam Bricks website contact form.
               <div className="bg-[#650909]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-[#650909]" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Easy Access</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-semibold text-[#650909] mb-2">Easy Access</h3>
+              <p className="text-black text-sm">
                 Located on Industrial Avenue with easy truck access and loading facilities
               </p>
             </div>
@@ -324,8 +324,8 @@ This message was sent from the Jimam Bricks website contact form.
               <div className="bg-[#650909]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-[#650909]" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Extended Hours</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-semibold text-[#650909] mb-2">Extended Hours</h3>
+              <p className="text-black text-sm">
                 Open Monday through Saturday with flexible scheduling for large orders
               </p>
             </div>
@@ -333,8 +333,8 @@ This message was sent from the Jimam Bricks website contact form.
               <div className="bg-[#650909]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-[#650909]" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Expert Consultation</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-semibold text-[#650909] mb-2">Expert Consultation</h3>
+              <p className="text-black text-sm">
                 Our material specialists are available for on-site consultations and advice
               </p>
             </div>

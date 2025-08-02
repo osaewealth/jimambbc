@@ -7,10 +7,12 @@ import Homepage from './pages/Homepage';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import {ScrollTop} from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+     <ScrollTop />
       <div className="min-h-screen bg-white">
         <Header />
         <main>

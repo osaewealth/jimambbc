@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import Button from './Button';
-import logo from '../assets/jimam-logo.jpg';
+import logo from '../assets/jimam-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,8 +39,8 @@ const Header = () => {
               style={{ background: 'white' }}
             />
             <div className="flex flex-col">
-              <span className="font-bold text-base lg:text-lg text-brand-black">Jimam Bricks</span>
-              <span className="text-xs text-brand-black -mt-1 hidden sm:block">Building Materials</span>
+              <span className="font-bold text-base lg:text-lg text-[#650909]">Jimam Bricks</span>
+              <span className="text-xs text-black -mt-1 hidden sm:block">Building Materials</span>
             </div>
           </Link>
 
@@ -50,10 +50,10 @@ const Header = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-brand-blue ${
+                className={`text-sm font-medium transition-colors duration-200 hover:text-[#650909] ${
                   location.pathname === link.to
-                    ? 'text-brand-blue border-b-2 border-brand-blue'
-                    : 'text-brand-black'
+                    ? 'text-[#650909] border-b-2 border-[#650909]'
+                    : 'text-black'
                 }`}
               >
                 {link.label}

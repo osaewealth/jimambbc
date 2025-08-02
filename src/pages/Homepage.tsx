@@ -8,6 +8,8 @@ import brick1 from '../assets/Bricks 1/1.jpg';
 import brick2 from '../assets/Bricks 1/2.jpg';
 import brick3 from '../assets/Bricks 1/3.jpg';
 import ctaBg from '../assets/Jimam Final/4.jpg';
+import 'animate.css';
+import CountUp from '../components/countUp';
 
 const Homepage = () => {
   const features = [
@@ -60,7 +62,7 @@ const Homepage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHero((prev) => (prev + 1) % heroVideos.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -83,7 +85,7 @@ const Homepage = () => {
         ))}
 
         <div className="absolute inset-0 bg-black/50 z-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 z-30">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 z-30 text-center">
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-normal text-brand-white">
               {currentHero === 0 ? (
@@ -94,7 +96,7 @@ const Homepage = () => {
               ) : (
                 <>
                   <h1 className=''>Building Ghana’s Future.<br />
-                  <span className="text-brand-white">Quality You Can Trust.</span>
+                    <span className="text-brand-white">Quality You Can Trust.</span>
                   </h1>
                 </>
               )}
@@ -114,6 +116,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+
       {/* Slider navigation dots */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-4 flex justify-center space-x-3 z-40">
         {heroVideos.map((_, idx) => (
@@ -132,10 +135,10 @@ const Homepage = () => {
       <section className="py-12 sm:py-16 lg:py-24 bg-brand-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-black mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-black mb-4 animate__animated animate__lightSpeedInRight animate__slow">
               Our Featured Products
             </h2>
-            <p className="text-lg sm:text-xl text-brand-black max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-black max-w-3xl mx-auto px-4 animate__animated animate__lightSpeedInRight animate__slower">
               Discover our range of premium building materials crafted for durability and beauty
             </p>
           </div>
@@ -150,11 +153,11 @@ const Homepage = () => {
                   />
                 </div>
                 <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-brand-black mb-2">{product.name}</h3>
-                  <p className="text-sm sm:text-base text-brand-black mb-4 leading-relaxed">{product.description}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#650909] mb-2">{product.name}</h3>
+                  <p className="text-sm sm:text-base text-black mb-4 leading-relaxed">{product.description}</p>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center text-[#650909] hover:text-[#4b1313] font-medium text-sm sm:text-base transition-colors duration-200"
+                    className="inline-flex items-center text-[#014e98] hover:text-[#4b1313] font-medium text-sm sm:text-base transition-colors duration-200"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
@@ -170,50 +173,58 @@ const Homepage = () => {
       <section className="py-12 sm:py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-blue mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#650909] mb-4">
               Why Choose Jimam Bricks?
             </h2>
-            <p className="text-lg sm:text-xl text-brand-black max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-black max-w-3xl mx-auto px-4">
               We've been the trusted choice for quality building materials for nearly four decades
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="text-center group p-4 sm:p-6 bg-brand-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-brand-blue">
+              <div key={index} className="text-center group p-4 sm:p-6 bg-brand-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-black hover:border-[#650909]">
                 <div className="bg-brand-blue w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-brand-black transition-all duration-300 shadow-md">
                   <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-brand-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-brand-blue mb-3 sm:mb-4">{feature.title}</h3>
-                <p className="text-sm sm:text-base text-brand-black leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-[#650909] mb-3 sm:mb-4">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-black leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-r from-[#3d2502] to-[#3d2502] text-brand-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-r from-[#31220f] to-[#382304] text-brand-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div className="p-4 sm:p-6">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">4+</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">
+                <CountUp end={4} />+
+              </div>
               <div className="text-sm sm:text-base text-brand-white">Years Experience</div>
             </div>
             <div className="p-4 sm:p-6">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">100+</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">
+                <CountUp end={100} />+
+              </div>
               <div className="text-sm sm:text-base text-brand-white">Projects Completed</div>
             </div>
             <div className="p-4 sm:p-6">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">50+</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">
+                <CountUp end={50} />+
+              </div>
               <div className="text-sm sm:text-base text-brand-white">Happy Clients</div>
             </div>
             <div className="p-4 sm:p-6">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">24/7</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">
+                24/7
+              </div>
               <div className="text-sm sm:text-base text-brand-white">Customer Support</div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section
