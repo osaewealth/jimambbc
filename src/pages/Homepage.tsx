@@ -9,7 +9,7 @@ import brick2 from '../assets/Bricks 1/2.jpg';
 import brick3 from '../assets/Bricks 1/3.jpg';
 import ctaBg from '../assets/Jimam Final/4.jpg';
 import 'animate.css';
-import CountUp from '../components/countUp';
+import CountUp from '../components/CountUp';
 
 const Homepage = () => {
   const features = [

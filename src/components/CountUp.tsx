@@ -1,15 +1,23 @@
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-const CountUp = ({ end, duration = 2000 }) => {
+type CountUpProps = {
+  end: number;
+  duration?: number;
+};
+
+const CountUp: React.FC<CountUpProps> = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     if (inView && !hasAnimated) {
       let start = 0;
-      const increment = end / (duration / 16); // ~60fps
+      const increment = end / (duration / 16);
       const step = () => {
         start += increment;
         if (start < end) {
@@ -32,3 +40,4 @@ const CountUp = ({ end, duration = 2000 }) => {
 };
 
 export default CountUp;
+
