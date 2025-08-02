@@ -1,94 +1,38 @@
 import React, { useState } from 'react';
-import { Filter, ExternalLink } from 'lucide-react';
-import Button from '../components/Button';
 import img1 from '../assets/Jimam General/new1.jpg';
 import img2 from '../assets/Jimam General/new2.jpg';
 import img3 from '../assets/Jimam General/new3.jpg';
 import heroBg from '../assets/Jimam General/ty.jpg';
+import Button from '../components/Button';
+import ImageModal from '../components/ImageModal';
 
-const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+type Project = {
+  img: string;
+  caption: string;
+};
 
-  const filters = ['All', 'Residential', 'Commercial', 'Landscaping'];
+const Portfolio: React.FC = () => {
+  const [modalImage, setModalImage] = useState<string | null>(null);
+  const [modalCaption, setModalCaption] = useState<string>('');
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Modern Family Home',
-      category: 'Residential',
-      image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Beautiful 3-bedroom family home featuring our premium clay bricks',
-      materials: 'Red Clay Bricks, Mortar'
-    },
-    {
-      id: 2,
-      title: 'Downtown Office Complex',
-      category: 'Commercial',
-      image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Modern office building with contemporary brick facade',
-      materials: 'Charcoal Bricks, Steel Reinforcement'
-    },
-    {
-      id: 3,
-      title: 'Garden Pathway Project',
-      category: 'Landscaping',
-      image: 'https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Elegant walkway using clay pavers and decorative elements',
-      materials: 'Clay Pavers, Sand Base'
-    },
-    {
-      id: 4,
-      title: 'Luxury Villa Construction',
-      category: 'Residential',
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'High-end residential project with custom brick work',
-      materials: 'Premium Clay Bricks, Custom Colors'
-    },
-    {
-      id: 5,
-      title: 'Shopping Center Facade',
-      category: 'Commercial',
-      image: 'https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Large-scale commercial project with mixed brick patterns',
-      materials: 'Multi-tone Bricks, Weather Sealant'
-    },
-    {
-      id: 6,
-      title: 'Backyard Patio Design',
-      category: 'Landscaping',
-      image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Beautiful outdoor living space with clay paver flooring',
-      materials: 'Clay Pavers, Edging Stones'
-    },
-    {
-      id: 7,
-      title: 'Traditional Townhouse',
-      category: 'Residential',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Classic townhouse design with timeless brick appeal',
-      materials: 'Traditional Red Bricks, Lime Mortar'
-    },
-    {
-      id: 8,
-      title: 'School Building Renovation',
-      category: 'Commercial',
-      image: 'https://images.pexels.com/photos/1730877/pexels-photo-1730877.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Educational facility upgrade with durable brick materials',
-      materials: 'Institutional Grade Bricks, Fire-rated Mortar'
-    },
-    {
-      id: 9,
-      title: 'Garden Wall & Seating',
-      category: 'Landscaping',
-      image: 'https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Decorative garden wall with integrated seating areas',
-      materials: 'Decorative Bricks, Capstone'
-    }
+  const openModal = (src: string, caption: string) => {
+    setModalImage(src);
+    setModalCaption(caption);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalImage(null);
+    setModalCaption('');
+  };
+
+  const projects: Project[] = [
+    { img: img1, caption: 'MODERN HOME' },
+    { img: img2, caption: 'MODERN HOME' },
+    { img: img3, caption: 'CONSTRUCTION PROJECT' },
   ];
-
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
 
   return (
     <div className="pt-16 lg:pt-20">
@@ -108,9 +52,7 @@ const Portfolio = () => {
               Our Project Portfolio
             </h1>
             <p className="text-xl text-white">
-              Explore our extensive collection of completed projects showcasing the versatility 
-              and quality of our building materials across residential, commercial, and 
-              landscaping applications.
+              Explore our completed projects showcasing the versatility and quality of our building materials.
             </p>
           </div>
         </div>
@@ -119,31 +61,21 @@ const Portfolio = () => {
       {/* Projects Grid */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-row justify-center items-stretch gap-6">
-            {/* Image 1 */}
-            <div className="flex-1 flex flex-col items-center bg-white rounded-xl shadow-lg overflow-hidden">
-              <img src={img1} alt="Jewel Aeida, Lekki Phase 1" className="w-full h-96 object-cover" />
-              <div className="p-6 w-full">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">MODERN HOME</h3>
-            
+          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-6">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="flex-1 flex flex-col items-center bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform"
+                onClick={() => openModal(project.img, project.caption)}
+              >
+                <img src={project.img} alt={project.caption} className="w-full h-96 object-cover" />
+                <div className="p-6 w-full">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1 text-center">
+                    {project.caption}
+                  </h3>
+                </div>
               </div>
-            </div>
-            {/* Image 2 */}
-            <div className="flex-1 flex flex-col items-center bg-white rounded-xl shadow-lg overflow-hidden">
-              <img src={img2} alt="Modern Home" className="w-full h-96 object-cover" />
-              <div className="p-6 w-full">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">MODERN HOME</h3>
-                
-              </div>
-            </div>
-            {/* Image 3 */}
-            <div className="flex-1 flex flex-col items-center bg-white rounded-xl shadow-lg overflow-hidden">
-              <img src={img3} alt="Construction Project" className="w-full h-96 object-cover" />
-              <div className="p-6 w-full">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">CONSTRUCTION PROJECT</h3>
-                
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -155,8 +87,7 @@ const Portfolio = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Let our experienced team help you choose the perfect materials for your next 
-            construction project. Get in touch for a personalized consultation and quote.
+            Let our team help you choose the perfect materials. Get in touch for a free consultation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button to="/contact" variant="primary" size="lg">
@@ -168,6 +99,14 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={isModalOpen}
+        imageSrc={modalImage}
+        caption={modalCaption}
+        onClose={closeModal}
+      />
     </div>
   );
 };
