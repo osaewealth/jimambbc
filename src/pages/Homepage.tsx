@@ -180,7 +180,7 @@ const Homepage = () => {
               We've been the trusted choice for quality building materials for nearly four decades
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 ">
             {features.map((feature, index) => (
               <div key={index} className="text-center group p-4 sm:p-6 bg-brand-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-black hover:border-[#650909]">
                 <div className="bg-brand-blue w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-brand-black transition-all duration-300 shadow-md">

@@ -15,7 +15,7 @@ const Footer = () => {
                 src={logo}
                 alt="Jimam Bricks Logo"
                 className="w-14 h-14 rounded-lg object-contain shadow-lg  p-1"
-                // style={{ background: 'white' }}
+              // style={{ background: 'white' }}
               />
               <div className="flex flex-col">
                 <span className="font-bold text-lg text-white">Jimam</span>
@@ -23,7 +23,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-200 text-sm leading-relaxed">
-              Quality clay bricks and building materials for all your construction needs. 
+              Quality clay bricks and building materials for all your construction needs.
               Building strong foundations with decades of experience.
             </p>
           </div>
@@ -83,7 +83,7 @@ const Footer = () => {
                   info@jimambricks.com
                 </a>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <a href="https://wa.me/233505277493" className="text-gray-200 hover:text-white transition-colors text-sm" target="_blank" rel="noopener noreferrer">
                   WhatsApp: +233 50 527 7493
@@ -123,18 +123,23 @@ const Footer = () => {
             </div>
             <div className="space-y-2">
               <h4 className="font-medium text-white">Newsletter</h4>
-              <p className="text-gray-200 text-sm">Get updates on new products and projects</p>
-              <div className="flex space-x-2">
+              <p className="text-gray-200 text-sm">Get updates on new products and projects — coming soon!</p>
+              <div className="flex space-x-2 opacity-50 cursor-not-allowed">
                 <input
                   type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm focus:outline-none focus:border-[#650909] text-white placeholder-gray-400"
+                  placeholder="Coming soon"
+                  disabled
+                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder-gray-400"
                 />
-                <button className="bg-[#650909] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#4b1313] transition-colors text-white">
+                <button
+                  disabled
+                  className="bg-[#650909] px-4 py-2 rounded-lg text-sm font-medium text-white"
+                >
                   Subscribe
                 </button>
               </div>
             </div>
+
           </div>
         </div>
 
