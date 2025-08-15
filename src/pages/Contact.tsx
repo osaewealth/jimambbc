@@ -52,7 +52,7 @@ This message was sent from the Jimam Bricks website contact form.
     {
       icon: MapPin,
       title: 'Our Location',
-      details: ['Ghana', '(Contact for directions)']
+      details: ['Ghana', '(Private Scuttle Parcel Box GZ-090-3554)']
     },
     {
       icon: Phone,
@@ -62,7 +62,7 @@ This message was sent from the Jimam Bricks website contact form.
     {
       icon: Mail,
       title: 'E-mail',
-      details: ['ceo@jimambricks.com', 'info@jimambricks.com']
+      details: ['ceo@jimambricks.com', 'enyankah9@yahoo.com']
     },
     {
       icon: Mail,
@@ -164,7 +164,7 @@ This message was sent from the Jimam Bricks website contact form.
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                      placeholder="(234) 567-8900"
+                      placeholder="(233) 567-890-220"
                     />
                   </div>
                   <div>
@@ -222,8 +222,7 @@ This message was sent from the Jimam Bricks website contact form.
                   Contact Information
                 </h2>
                 <p className="text-black mb-8">
-                  Reach out to us through any of the following channels. Our team is ready 
-                  to assist you with all your building material needs.
+                  Thank you for considering JIMAM COMPANY LTD for your construction needs. For inquiries or to discuss your project requirements, please contact us at
                 </p>
               </div>
 
@@ -270,10 +269,10 @@ This message was sent from the Jimam Bricks website contact form.
                   24/7 for critical construction projects at additional cost.
                 </p>
                 <a
-                  href="tel:+233505277493"
+                  href="tel:'+233 24 334 4009'"
                   className="text-red-600 font-medium hover:text-red-800 transition-colors"
                 >
-                  Emergency Line: +233 50 527 7493
+                  Emergency Line: +233 24 334 4009
                 </a>
               </div>
             </div>
@@ -297,7 +296,7 @@ This message was sent from the Jimam Bricks website contact form.
           {/* Embedded Map */} 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.191737626375!2d-0.9258985756158197!3d5.232551386818713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfde175098a2d4cd%3A0x9eace33f80780c3a!2sJimam%20Company%20LTD!5e0!3m2!1sen!2sgh!4v1753706074625!5m2!1sen!2sgh" 
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3972.8345339045013!2d-0.9158333000000003!3d5.2885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTcnMTguNiJOIDDCsDU0JzU3LjAiVw!5e0!3m2!1sen!2sgh!4v1755262805733!5m2!1sen!2sgh" 
               width="100%" 
               height="450" 
               style={{border:0}} 

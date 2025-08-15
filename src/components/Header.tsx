@@ -94,7 +94,7 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block text-base font-medium transition-colors duration-200 hover:text-brand-blue ${
+                className={`flex flex-col items-center justify-between text-base  font-medium transition-colors duration-200 hover:text-brand-blue ${
                   location.pathname === link.to ? 'text-brand-blue' : 'text-brand-black'
                 }`}
               >
@@ -103,8 +103,8 @@ const Header = () => {
             ))}
             <div className="pt-4 border-t border-brand-blue space-y-4">
               <a
-                href="tel:+233505277493"
-                className="flex items-center space-x-2 text-brand-black hover:text-brand-blue transition-colors"
+                href="tel:+233243344009"
+                className="flex items-center justify-center space-x-2 text-brand-black hover:text-brand-blue transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 <span className="text-base font-medium">Call Now</span>

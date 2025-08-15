@@ -8,18 +8,18 @@ const About = () => {
   const values = [
     {
       icon: Target,
-      title: 'Consistency & Quality',
-      description: 'Our products meet rigorous standards and are tested to ensure durability in all weather conditions.'
+      title: 'Quality Assurance',
+      description: 'At JIMAM COMPANY LTD, quality is our top priority. We adhere to rigorous quality standards, employing skilled craftsmen, utilizing premium materials, and implementing best practices to ensure superior construction outcomes that exceed client expectations'
     },
     {
       icon: Heart,
-      title: 'Technical Expertise',
-      description: 'Our team of engineers, technicians, and project managers bring years of industry experience to every project.'
+      title: 'Safety and Compliance',
+      description: 'Safety is ingrained in our culture, and we are committed to maintaining safe worksites for our employees, subcontractors, and stakeholders. We strictly adhere to industry regulations and implement comprehensive safety protocols to mitigate risks and promote a culture of safety excellence'
     },
     {
       icon: Zap,
-      title: 'Customer-Centric Approach',
-      description: 'We believe in building more than structures—we build trust. From your first inquiry to final delivery, we ensure a seamless and satisfying experience.'
+      title: 'Our Team',
+      description: 'Our success is driven by our dedicated team of professionals who bring a wealth of experience, expertise, and passion to every project. From skilled craftsmen and project managers to engineers and architects, our team collaborates seamlessly to deliver exceptional results.'
     }
   ];
 
@@ -58,15 +58,16 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#650909] mb-6">Who We Are</h2>
-              <p className="text-lg text-black mb-6">
-                Jimam Bricks is a premier brick manufacturing and construction company committed to producing durable, 
-                eco-friendly, and aesthetically superior bricks for residential, commercial, and industrial use. Whether you're building a home, a school, or a complex infrastructure project, we are your trusted partner for quality materials and expert advice.
+              <p className="text-lg text-black mb-6 text-justify">
+                JIMAM COMPANY LTD is a leading construction firm committed to delivering high-quality, innovative, and sustainable construction solutions. The company is also into the production of clay burnt bricks and tiles. With a rich history spanning over 10 years, we have earned a reputation for excellence, reliability, and integrity in the construction industry. Our dedication to client satisfaction and our passion for construction excellence drive everything we do.
               </p>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#650909] mb-6">What We Do</h2>
-              <ul className="list-disc pl-6 space-y-3 text-black">
-                <li><b>High-Quality Brick Manufacturing:</b> Our bricks are made using the finest raw materials and modern techniques to ensure consistency, strength, and long-lasting performance.</li>
-                <li><b>Custom Construction Solutions:</b> We work with developers, contractors, and homeowners to deliver tailored construction solutions that match project goals and budgets.</li>
-                <li><b>Sustainable Practices:</b> Sustainability is at the heart of our operations. We use environmentally responsible processes to reduce waste and minimize our impact on the environment.</li>
+              <ul className="list-disc pl-6 space-y-3 text-black text-justify">
+                <li><b>General Contracting:</b> Our experienced team of professionals manages all aspects of the construction process, from pre-construction planning to project completion, ensuring smooth execution and timely delivery.</li>
+                <li><b>Design-Build:</b> By integrating design and construction services, we streamline the construction process, minimize risks, and optimize project outcomes, providing clients with cost-effective and efficient solutions.</li>
+                <li><b>Construction Management:</b> Our construction management services offer clients expert guidance and oversight throughout the construction process, from project planning and scheduling to budget management and quality control.</li>
+                <li><b>Renovation and Remodeling:</b> Whether it's revitalizing existing structures or transforming spaces to meet evolving needs, our renovation and remodeling services breathe new life into buildings, enhancing functionality, aesthetics, and value.</li>
+                <li><b>Green Building Solutions:</b> Committed to sustainability, we offer green building solutions that reduce environmental impact, enhance energy efficiency, and promote healthier indoor environments, aligning with our clients' sustainability goals.</li>
               </ul>
             </div>
             <div className="relative">
@@ -113,12 +114,12 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#650909] mb-6">Our Vision</h2>
-              <p className="text-lg text-black mb-8">
+              <p className="text-lg text-black mb-8 text-justify">
                 To be the most trusted name in brick manufacturing and construction solutions across West Africa, known for quality, innovation, and social impact.
               </p>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#650909] mb-6">Our Mission</h2>
-              <p className="text-lg text-black">
-                To provide top-grade bricks and construction services that empower communities, support sustainable development, and inspire excellence in every build.
+              <p className="text-lg text-black text-justify">
+                At JIMAM COMPANY LTD, our mission is to be first choose home solution for Africa and beyond, providing affordable houses that transcend generations.
               </p>
             </div>
             <div className="relative">

@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Facebook, Instagram, MessageCircle } from 'lucide-
 import logo from '../assets/jimam-logo.png';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-gradient-to-r from-[#3d2502] to-[#3d2502] text-brand-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -62,7 +63,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 mt-1 text-white" />
                 <span className="text-gray-200 text-sm">
-                  Ghana, Ekumfi Atwa
+                  Ghana, Private Scuttle Parcel Box GZ-090-3554
                 </span>
               </div>
               <div className="flex items-center space-x-3">
@@ -79,8 +80,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-white" />
-                <a href="mailto:info@jimambricks.com" className="text-gray-200 hover:text-white transition-colors text-sm">
-                  info@jimambricks.com
+                <a href="mailto:enyankah9@yahoo.com" className="text-gray-200 hover:text-white transition-colors text-sm">
+                  enyankah9@yahoo.com
                 </a>
               </div>
 
@@ -97,7 +98,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com/jimanconstruction"
+                href="https://web.facebook.com/JimamBricks"
                 className="bg-gray-800 p-2 rounded-lg hover:bg-[#650909] transition-colors"
                 aria-label="Facebook"
                 target="_blank" rel="noopener noreferrer"
@@ -124,7 +125,7 @@ const Footer = () => {
             <div className="space-y-2">
               <h4 className="font-medium text-white">Newsletter</h4>
               <p className="text-gray-200 text-sm">Get updates on new products and projects — coming soon!</p>
-              <div className="flex flex-col md:flex-row space-x-2 opacity-50 cursor-not-allowed">
+              <div className="flex space-x-2 opacity-50 cursor-not-allowed">
                 <input
                   type="email"
                   placeholder="Coming soon"
@@ -146,7 +147,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-200 text-sm">
-              © 2024 Jimam Bricks. All rights reserved.
+              © {currentYear} Jimam Bricks. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-white hover:text-gray-200 transition-colors">

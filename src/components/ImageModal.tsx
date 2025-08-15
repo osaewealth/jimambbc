@@ -80,14 +80,20 @@ const ImageModal: React.FC<ImageModalProps> = ({
             </button>
           </>
         )}
-
-        <div className="flex-grow flex items-center justify-center bg-gray-900 overflow-hidden">
-          <img
-            src={images[currentImageIndex]}
-            alt={caption}
-            className="max-w-full max-h-full object-contain"
-          />
+        
+        {/* === START OF THE FIX === */}
+        <div className="flex-grow flex items-center justify-center bg-gray-900 overflow-hidden relative">
+          {/* This is the new container for the image */}
+          <div className="w-full relative" style={{ paddingTop: '75%' /* This creates a 4:3 aspect ratio */ }}>
+            <img
+              src={images[currentImageIndex]}
+              alt={caption}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
         </div>
+        {/* === END OF THE FIX === */}
+
         <div className="p-4 bg-gray-800 text-white text-center">
           <p className="text-xl font-semibold">{caption}</p>
         </div>

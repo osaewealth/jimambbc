@@ -3,9 +3,18 @@ import React, { useState } from 'react';
 import img1 from '../assets/Jimam General/new1.jpg';
 import img2 from '../assets/Jimam General/new2.jpg';
 import img3 from '../assets/Jimam General/new3.jpg';
-import img4 from '../assets/Jimam General/new1.jpg'; // This seems to be a duplicate image import
-import img5 from '../assets/Jimam General/new2.jpg'; // This seems to be a duplicate image import
-import img6 from '../assets/Jimam General/new3.jpg'; // This seems to be a duplicate image import
+import img4 from '../assets/jimam-construction/Picture1.jpg'; 
+import img5 from '../assets/jimam-construction/Picture2.jpg'; 
+import img6 from '../assets/jimam-construction/Picture3.jpg'; 
+import img7 from '../assets/jimam-construction/Picture4.jpg';
+import img8 from '../assets/jimam-construction/Picture5.jpg'; 
+import img9 from '../assets/jimam-construction/Picture6.jpg';
+import img10 from '../assets/jimam-construction/Picture7.jpg';
+import img11 from '../assets/jimam-realestate/Picture8.jpg';
+import img12 from '../assets/jimam-realestate/Picture9.jpg';
+import img13 from '../assets/jimam-realestate/Picture10.jpg';
+import img14 from '../assets/jimam-realestate/Picture11.jpg';
+import img15 from '../assets/Jimam General/Picture12.png';
 import heroBg from '../assets/Jimam General/ty.jpg';
 
 // Import your new ImageGalleryModal component
@@ -49,17 +58,17 @@ const Portfolio: React.FC = () => {
   const projects: Project[] = [
     {
       thumbnail: img1, // Use the first image as the thumbnail
-      images: [img1, img2, img3],
+      images: [img1, img2, img3, img15],
       caption: 'MODERN HOME'
     },
     {
       thumbnail: img4, // Use the first image of this set as the thumbnail
-      images: [img4, img5, img6],
+      images: [img4, img5, img6,img7, img8, img9, img10],
       caption: 'CONSTRUCTION PROJECT'
     },
     {
-      thumbnail: img4, // Use the first image of this set as the thumbnail
-      images: [img4, img5, img6],
+      thumbnail: img12, // Use the first image of this set as the thumbnail
+      images: [img12, img13, img14, img11],
       caption: 'REAL ESTATE DEVELOPMENT'
     },
     // Add more projects with multiple images as needed
