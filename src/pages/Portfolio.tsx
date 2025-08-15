@@ -1,42 +1,73 @@
 import React, { useState } from 'react';
+// Import your individual images.
 import img1 from '../assets/Jimam General/new1.jpg';
 import img2 from '../assets/Jimam General/new2.jpg';
 import img3 from '../assets/Jimam General/new3.jpg';
+import img4 from '../assets/Jimam General/new1.jpg'; // This seems to be a duplicate image import
+import img5 from '../assets/Jimam General/new2.jpg'; // This seems to be a duplicate image import
+import img6 from '../assets/Jimam General/new3.jpg'; // This seems to be a duplicate image import
 import heroBg from '../assets/Jimam General/ty.jpg';
+
+// Import your new ImageGalleryModal component
+import ImageGalleryModal from '../components/ImageModal'; // Assuming this is your file name
 import Button from '../components/Button';
-import ImageModal from '../components/ImageModal';
 
 type Project = {
-  img: string;
+  thumbnail: string; // Add a thumbnail to display on the card
+  images: string[];
   caption: string;
 };
 
 const Portfolio: React.FC = () => {
-  const [modalImage, setModalImage] = useState<string | null>(null);
+  const [modalImages, setModalImages] = useState<string[]>([]);
   const [modalCaption, setModalCaption] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
-  const openModal = (src: string, caption: string) => {
-    setModalImage(src);
+  const openModal = (images: string[], caption: string) => {
+    setModalImages(images);
     setModalCaption(caption);
+    setCurrentImageIndex(0); // Always start at the first image
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setModalImage(null);
+    setModalImages([]);
     setModalCaption('');
+    setCurrentImageIndex(0);
+  };
+
+  const showNextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % modalImages.length);
+  };
+
+  const showPrevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + modalImages.length) % modalImages.length);
   };
 
   const projects: Project[] = [
-    { img: img1, caption: 'MODERN HOME' },
-    { img: img2, caption: 'MODERN HOME' },
-    { img: img3, caption: 'CONSTRUCTION PROJECT' },
+    {
+      thumbnail: img1, // Use the first image as the thumbnail
+      images: [img1, img2, img3],
+      caption: 'MODERN HOME'
+    },
+    {
+      thumbnail: img4, // Use the first image of this set as the thumbnail
+      images: [img4, img5, img6],
+      caption: 'CONSTRUCTION PROJECT'
+    },
+    {
+      thumbnail: img4, // Use the first image of this set as the thumbnail
+      images: [img4, img5, img6],
+      caption: 'REAL ESTATE DEVELOPMENT'
+    },
+    // Add more projects with multiple images as needed
   ];
 
   return (
     <div className="pt-16 lg:pt-20">
-      {/* Hero Section */}
+      {/* Hero Section remains the same */}
       <section
         className="relative text-white py-16 lg:py-24 overflow-hidden"
         style={{
@@ -66,9 +97,9 @@ const Portfolio: React.FC = () => {
               <div
                 key={index}
                 className="flex-1 flex flex-col items-center bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform"
-                onClick={() => openModal(project.img, project.caption)}
+                onClick={() => openModal(project.images, project.caption)}
               >
-                <img src={project.img} alt={project.caption} className="w-full h-96 object-cover" />
+                <img src={project.thumbnail} alt={project.caption} className="w-full h-96 object-cover" />
                 <div className="p-6 w-full">
                   <h3 className="text-lg font-bold text-gray-900 mb-1 text-center">
                     {project.caption}
@@ -80,7 +111,7 @@ const Portfolio: React.FC = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* Call to Action remains the same */}
       <section className="py-16 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-[#650909]">
@@ -93,19 +124,23 @@ const Portfolio: React.FC = () => {
             <Button to="/contact" variant="primary" size="lg">
               Get Free Consultation
             </Button>
-            <Button href="tel:+233505277493" variant="outline" size="lg">
-              Call: +233 50 527 7493
+            <Button href="https://wa.me/233505277493" variant="outline" size="lg">
+              <span className="hidden sm:inline">WhatsApp: +233 50 527 7493</span>
+              <span className="sm:hidden">WhatsApp</span>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Image Modal */}
-      <ImageModal
+      {/* The Image Gallery Modal now receives the necessary props */}
+      <ImageGalleryModal
         isOpen={isModalOpen}
-        imageSrc={modalImage}
+        images={modalImages}
         caption={modalCaption}
         onClose={closeModal}
+        currentImageIndex={currentImageIndex}
+        onNext={showNextImage}
+        onPrev={showPrevImage}
       />
     </div>
   );

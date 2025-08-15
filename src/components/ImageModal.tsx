@@ -1,54 +1,95 @@
-import React, { useEffect } from 'react';
+// src/components/ImageModal.tsx
+
+import React, { useEffect, useCallback } from 'react';
 
 type ImageModalProps = {
   isOpen: boolean;
-  imageSrc: string | null;
+  images: string[];
+  caption: string;
   onClose: () => void;
+  currentImageIndex: number;
+  onNext: () => void;
+  onPrev: () => void;
 };
 
-const ImageModal: React.FC<ImageModalProps> = ({ isOpen, imageSrc, onClose }) => {
-  // Close modal on Escape key
+const ImageModal: React.FC<ImageModalProps> = ({
+  isOpen,
+  images,
+  caption,
+  onClose,
+  currentImageIndex,
+  onNext,
+  onPrev,
+}) => {
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (!isOpen) return;
+
+      if (event.key === 'ArrowRight' && images.length > 1) {
+        onNext();
+      } else if (event.key === 'ArrowLeft' && images.length > 1) {
+        onPrev();
+      } else if (event.key === 'Escape') {
+        onClose();
+      }
+    },
+    [isOpen, images.length, onNext, onPrev, onClose]
+  );
+
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-
     if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
     }
-
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, handleKeyDown]);
 
-  if (!isOpen || !imageSrc) return null;
+  if (!isOpen || images.length === 0) return null;
 
   return (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300"
-      onClick={onClose}
-    >
-      <div className="relative" onClick={(e) => e.stopPropagation()}>
-        {/* Close Button */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
+      <div className="relative bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] flex flex-col">
         <button
-          className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-red-400"
+          className="absolute top-3 right-3 text-white text-3xl z-10 p-2 rounded-full hover:bg-black/20 transition-colors"
           onClick={onClose}
           aria-label="Close modal"
         >
           &times;
         </button>
 
-        {/* Image */}
-        <img
-          src={imageSrc}
-          alt="Full View"
-          className="max-w-screen-md max-h-[90vh] object-contain rounded-lg shadow-lg transition duration-300"
-        />
+        {images.length > 1 && (
+          <>
+            <button
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-white text-4xl z-10 p-2 rounded-full hover:bg-black/20 transition-colors"
+              onClick={onPrev}
+              aria-label="Previous image"
+            >
+              &#8249; {/* Left arrow */}
+            </button>
+            <button
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-white text-4xl z-10 p-2 rounded-full hover:bg-black/20 transition-colors"
+              onClick={onNext}
+              aria-label="Next image"
+            >
+              &#8250; {/* Right arrow */}
+            </button>
+          </>
+        )}
 
-        {/* Optional Caption */}
-        <div className="text-center text-white mt-2 text-sm">
-          Click anywhere or press <kbd>Esc</kbd> to close
+        <div className="flex-grow flex items-center justify-center bg-gray-900 overflow-hidden">
+          <img
+            src={images[currentImageIndex]}
+            alt={caption}
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+        <div className="p-4 bg-gray-800 text-white text-center">
+          <p className="text-xl font-semibold">{caption}</p>
         </div>
       </div>
     </div>

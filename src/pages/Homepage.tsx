@@ -199,7 +199,7 @@ const Homepage = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div className="p-4 sm:p-6">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 text-brand-white">
-                <CountUp end={4} />+
+                <CountUp end={10} />+
               </div>
               <div className="text-sm sm:text-base text-brand-white">Years Experience</div>
             </div>
@@ -248,9 +248,9 @@ const Homepage = () => {
             <Button to="/contact" variant="primary" size="lg" icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}>
               Get Free Quote
             </Button>
-            <Button href="tel:+233505277493" variant="outline" size="lg">
-              <span className="hidden sm:inline">Call Now: +233 50 527 7493</span>
-              <span className="sm:hidden">Call Now</span>
+            <Button href="https://wa.me/233505277493" variant="outline" size="lg">
+              <span className="hidden sm:inline">WhatsApp: +233 50 527 7493</span>
+              <span className="sm:hidden">WhatsApp</span>
             </Button>
           </div>
         </div>
