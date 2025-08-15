@@ -124,7 +124,7 @@ const Footer = () => {
             <div className="space-y-2">
               <h4 className="font-medium text-white">Newsletter</h4>
               <p className="text-gray-200 text-sm">Get updates on new products and projects — coming soon!</p>
-              <div className="flex space-x-2 opacity-50 cursor-not-allowed">
+              <div className="flex flex-col md:flex-row space-x-2 opacity-50 cursor-not-allowed">
                 <input
                   type="email"
                   placeholder="Coming soon"
