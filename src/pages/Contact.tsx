@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import Button from '../components/Button';
 import yuyuImg from '../assets/Jimam General/yuyu.webp';
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -73,25 +74,32 @@ This message was sent from the Jimam Bricks website contact form.
 
   return (
     <div className="pt-16 lg:pt-20">
+      <Helmet>
+        <title>Contact Jimam Bricks | Get a Free Quote Today</title>
+        <meta
+          name="description"
+          content="Contact Jimam Bricks for quotes, orders, or inquiries. Call us, email us, or visit our Ghana office. Quality bricks, fast delivery, trusted service."
+        />
+        <link rel="canonical" href="https://jimambricks.com/contact" />
+      </Helmet>
+
       {/* Hero Section */}
       <section
         className="relative text-white py-16 lg:py-24 overflow-hidden"
         style={{
           backgroundImage: `url(${yuyuImg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Contact Us
-            </h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-white">
-              Ready to start your project? Get in touch with our team for expert advice, 
-              quality materials, and exceptional service. We're here to help bring your 
-              construction vision to life.
+              Ready to start your project? Get in touch with our team for expert
+              advice, quality materials, and exceptional service. We're here to
+              help bring your construction vision to life.
             </p>
           </div>
         </div>
@@ -107,21 +115,26 @@ This message was sent from the Jimam Bricks website contact form.
                 Get a Free Quote
               </h2>
               <p className="text-black mb-8">
-                Fill out the form below and we'll get back to you within 24 hours with 
-                a detailed quote for your project.
+                Fill out the form below and we'll get back to you within 24
+                hours with a detailed quote for your project.
               </p>
 
               {isSubmitted && (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-green-700">Thank you! We'll be in touch soon.</span>
+                  <span className="text-green-700">
+                    Thank you! We'll be in touch soon.
+                  </span>
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -136,7 +149,10 @@ This message was sent from the Jimam Bricks website contact form.
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -154,7 +170,10 @@ This message was sent from the Jimam Bricks website contact form.
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Phone Number
                     </label>
                     <input
@@ -168,7 +187,10 @@ This message was sent from the Jimam Bricks website contact form.
                     />
                   </div>
                   <div>
-                    <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="projectType"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Project Type
                     </label>
                     <select
@@ -189,7 +211,10 @@ This message was sent from the Jimam Bricks website contact form.
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Project Details *
                   </label>
                   <textarea
@@ -222,7 +247,9 @@ This message was sent from the Jimam Bricks website contact form.
                   Contact Information
                 </h2>
                 <p className="text-black mb-8">
-                  Thank you for considering JIMAM COMPANY LTD for your construction needs. For inquiries or to discuss your project requirements, please contact us at
+                  Thank you for considering JIMAM COMPANY LTD for your
+                  construction needs. For inquiries or to discuss your project
+                  requirements, please contact us at
                 </p>
               </div>
 
@@ -234,26 +261,55 @@ This message was sent from the Jimam Bricks website contact form.
                         <info.icon className="w-6 h-6 text-[#650909]" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                        <h3 className="font-semibold text-gray-900 mb-2">
+                          {info.title}
+                        </h3>
                         <div className="space-y-1">
-                          {info.details.map((detail, idx) => (
-                            info.title === 'Phone/WhatsApp' ? (
+                          {info.details.map((detail, idx) =>
+                            info.title === "Phone/WhatsApp" ? (
                               <p key={idx} className="text-gray-600">
-                                <a href="tel:+233505277493" className="text-[#650909] hover:underline">{detail}</a> |{' '}
-                                <a href="https://wa.me/233505277493" className="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">WhatsApp Chat</a>
+                                <a
+                                  href="tel:+233505277493"
+                                  className="text-[#650909] hover:underline"
+                                >
+                                  {detail}
+                                </a>{" "}
+                                |{" "}
+                                <a
+                                  href="https://wa.me/233505277493"
+                                  className="text-green-600 hover:underline"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  WhatsApp Chat
+                                </a>
                               </p>
-                            ) : info.title === 'E-mail' ? (
+                            ) : info.title === "E-mail" ? (
                               <p key={idx} className="text-gray-600">
-                                <a href={`mailto:${detail}`} className="text-[#650909] hover:underline">{detail}</a>
+                                <a
+                                  href={`mailto:${detail}`}
+                                  className="text-[#650909] hover:underline"
+                                >
+                                  {detail}
+                                </a>
                               </p>
-                            ) : info.title === 'Website' ? (
+                            ) : info.title === "Website" ? (
                               <p key={idx} className="text-gray-600">
-                                <a href="https://www.jimambricks.com" className="text-[#650909] hover:underline" target="_blank" rel="noopener noreferrer">{detail}</a>
+                                <a
+                                  href="https://www.jimambricks.com"
+                                  className="text-[#650909] hover:underline"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {detail}
+                                </a>
                               </p>
                             ) : (
-                              <p key={idx} className="text-gray-600">{detail}</p>
+                              <p key={idx} className="text-gray-600">
+                                {detail}
+                              </p>
                             )
-                          ))}
+                          )}
                         </div>
                       </div>
                     </div>
@@ -263,10 +319,13 @@ This message was sent from the Jimam Bricks website contact form.
 
               {/* Emergency Contact */}
               <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-                <h3 className="font-semibold text-red-800 mb-2">Emergency Deliveries</h3>
+                <h3 className="font-semibold text-red-800 mb-2">
+                  Emergency Deliveries
+                </h3>
                 <p className="text-red-700 text-sm mb-3">
-                  Need materials urgently? Our emergency delivery service is available 
-                  24/7 for critical construction projects at additional cost.
+                  Need materials urgently? Our emergency delivery service is
+                  available 24/7 for critical construction projects at
+                  additional cost.
                 </p>
                 <a
                   href="tel:'+233 24 334 4009'"
@@ -288,20 +347,21 @@ This message was sent from the Jimam Bricks website contact form.
               Visit Our Facility
             </h2>
             <p className="text-xl text-black max-w-3xl mx-auto">
-              Come see our manufacturing facility and material warehouse. We welcome 
-              contractors and builders to visit and inspect our products firsthand.
+              Come see our manufacturing facility and material warehouse. We
+              welcome contractors and builders to visit and inspect our products
+              firsthand.
             </p>
           </div>
 
-          {/* Embedded Map */} 
+          {/* Embedded Map */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3972.8345339045013!2d-0.9158333000000003!3d5.2885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTcnMTguNiJOIDDCsDU0JzU3LjAiVw!5e0!3m2!1sen!2sgh!4v1755262805733!5m2!1sen!2sgh" 
-              width="100%" 
-              height="450" 
-              style={{border:0}} 
-              allowFullScreen 
-              loading="lazy" 
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3972.8345339045013!2d-0.9158333000000003!3d5.2885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTcnMTguNiJOIDDCsDU0JzU3LjAiVw!5e0!3m2!1sen!2sgh!4v1755262805733!5m2!1sen!2sgh"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Jimam Company LTD Location"
               className="w-full"
@@ -316,25 +376,32 @@ This message was sent from the Jimam Bricks website contact form.
               </div>
               <h3 className="font-semibold text-[#650909] mb-2">Easy Access</h3>
               <p className="text-black text-sm">
-                Located on Industrial Avenue with easy truck access and loading facilities
+                Located on Industrial Avenue with easy truck access and loading
+                facilities
               </p>
             </div>
             <div className="text-center">
               <div className="bg-[#650909]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-[#650909]" />
               </div>
-              <h3 className="font-semibold text-[#650909] mb-2">Extended Hours</h3>
+              <h3 className="font-semibold text-[#650909] mb-2">
+                Extended Hours
+              </h3>
               <p className="text-black text-sm">
-                Open Monday through Saturday with flexible scheduling for large orders
+                Open Monday through Saturday with flexible scheduling for large
+                orders
               </p>
             </div>
             <div className="text-center">
               <div className="bg-[#650909]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-[#650909]" />
               </div>
-              <h3 className="font-semibold text-[#650909] mb-2">Expert Consultation</h3>
+              <h3 className="font-semibold text-[#650909] mb-2">
+                Expert Consultation
+              </h3>
               <p className="text-black text-sm">
-                Our material specialists are available for on-site consultations and advice
+                Our material specialists are available for on-site consultations
+                and advice
               </p>
             </div>
           </div>
